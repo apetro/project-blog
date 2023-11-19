@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import BlogSummaryCard from '@/components/BlogSummaryCard';
+import BlogSummaryCard from "@/components/BlogSummaryCard";
 
 import { getBlogPostList } from "@/helpers/file-helpers";
 
