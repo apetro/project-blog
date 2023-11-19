@@ -46,7 +46,7 @@ npm run new-component [TheNewComponentName]
 
 ---
 
-## Exercise 1: Homepage list of posts
+## Done: Exercise 1: Homepage list of posts
 
 Let's update the homepage so that it shows a list of blog posts:
 
