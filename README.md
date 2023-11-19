@@ -6,6 +6,7 @@ In this project, we'll build an interactive MDX-based blog using Next.js 14 (App
 
 ![Screenshot of the final product](/docs/end-result.png)
 
+per the project 3 in the Joy of React course.
 
 ## Getting Started
 
