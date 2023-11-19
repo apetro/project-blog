@@ -47,50 +47,17 @@ npm run new-component [TheNewComponentName]
 
 ---
 
-## Done: Exercise 1: Homepage list of posts
+## Done: Exercise 2: Displaying MDX
 
-Let's update the homepage so that it shows a list of blog posts:
+(How was I supposed to know to wrap the MDXRemote in a div with className styles.page?
 
-![Screenshot showing the homepage with a reverse-chronological list of blog posts](/docs/homepage-list-of-posts.png)
+```jsx
+      <div className={styles.page}>
+        <MDXRemote source={blogPost.content} />
+      </div>
+```
 
-**Acceptance Criteria:**
-
-- One `<BlogSummaryCard>` element should be rendered for each MDX file in the `/content` directory.
-- A unique `key` should be given to each element.
-- Each `<BlogSummaryCard>` element should be given the following props:
-  - `slug`, matching the filename (eg. `javascript-modulo-operator`)
-  - `title`, `abstract`, and `publishedOn`, all passed along from the frontmatter for each post.
-
-**Note:** To help with some of the Node file-manipulation stuff, a helper module has been provided, `/src/helpers/file-helpers.js`. You can use the `getBlogPostList` function to gather the full list of blog posts. Alternatively, if you some experience using Node, feel free to solve this exercise without using this helper.
-
----
-
-## Exercise 2: Displaying MDX
-
-When clicking on one of the blog posts on the homepage, we're taken to the dynamic blog post route:
-
-![Screenshot showing the blog post layout with the initial placeholder content](/docs/blog-post-before-mdx.png)
-
-In this exercise, we'll use next-mdx-remote to render the MDX associated with the selected blog post.
-
-**Acceptance Criteria:**
-
-- The MDX corresponding to the selected blog post should be rendered.
-  - For example, visiting `/javascript-modulo-operator` should display all of the content included in `/content/javascript-modulo-operator.mdx`.
-- The raw content from the MDX file should be passed to the `<MDXRemote>` component.
-
-The final result should look like this:
-
-![Screenshot showing the blog post layout with all of the content from the MDX file, with correct formatting (paragraphs, headings, etc)](/docs/blog-post-with-mdx.png)
-
-**Note:** Inside `/src/helpers/file-helpers.js`, you'll find a function called `loadBlogPost`. You can use this helper function if you're not comfortable with the Node `fs` module.
-
-**Resources:**
-
-- [“MDX in Next.js” lesson](https://courses.joshwcomeau.com/joy-of-react/project-blog/01.02-mdx-in-next)
-- [next-mdx-remote docs](https://github.com/hashicorp/next-mdx-remote#react-server-components-rsc--nextjs-app-directory-support)
-  - **Be sure to use the _RSC_ version of the package!**
-- [“Dynamic Segments” lesson](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/04.03-dynamic-segments)
+)
 
 ---
 
