@@ -6,6 +6,7 @@ import { loadBlogPost } from "@/helpers/file-helpers";
 
 import styles from "./postSlug.module.css";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import CodeSnippet from "@/components/CodeSnippet";
 
 async function BlogPost({ params }) {
   const blogPost = await loadBlogPost(params.postSlug);
@@ -17,7 +18,7 @@ async function BlogPost({ params }) {
         publishedOn={blogPost.frontmatter.publishedOn}
       />
       <div className={styles.page}>
-        <MDXRemote source={blogPost.content} />
+        <MDXRemote source={blogPost.content} components={{pre: CodeSnippet}} />
       </div>
     </article>
   );
