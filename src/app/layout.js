@@ -5,6 +5,8 @@ import {
 } from 'next/font/google';
 import clsx from 'clsx';
 
+import { BLOG_TITLE } from '@/constants';
+
 import { LIGHT_TOKENS, DARK_TOKENS } from '@/constants';
 
 import Header from '@/components/Header';
@@ -45,3 +47,8 @@ function RootLayout({ children }) {
 }
 
 export default RootLayout;
+
+export const metadata = {
+  title: BLOG_TITLE,
+  description: "A blog about stuff"
+};
