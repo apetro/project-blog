@@ -8,26 +8,22 @@ import matter from "gray-matter";
  * @returns array of blogPost metadata objects in reverse chronological order by publishedOn
  */
 export async function getBlogPostList() {
-  const fileNames = await readDirectory('/content');
+  const fileNames = await readDirectory("/content");
 
   const blogPosts = [];
 
   for (let fileName of fileNames) {
-    const rawContent = await readFile(
-      `/content/${fileName}`
-    );
+    const rawContent = await readFile(`/content/${fileName}`);
 
     const { data: frontmatter } = matter(rawContent);
 
     blogPosts.push({
-      slug: fileName.replace('.mdx', ''),
+      slug: fileName.replace(".mdx", ""),
       ...frontmatter,
     });
   }
 
-  return blogPosts.sort((p1, p2) =>
-    p1.publishedOn < p2.publishedOn ? 1 : -1
-  );
+  return blogPosts.sort((p1, p2) => (p1.publishedOn < p2.publishedOn ? 1 : -1));
 }
 
 export const loadBlogPost = React.cache(async (slug) => {
@@ -39,14 +35,9 @@ export const loadBlogPost = React.cache(async (slug) => {
 });
 
 function readFile(localPath) {
-  return fs.readFile(
-    path.join(process.cwd(), localPath),
-    'utf8'
-  );
+  return fs.readFile(path.join(process.cwd(), localPath), "utf8");
 }
 
 function readDirectory(localPath) {
-  return fs.readdir(
-    path.join(process.cwd(), localPath)
-  );
+  return fs.readdir(path.join(process.cwd(), localPath));
 }
