@@ -72,33 +72,7 @@ The “Understanding the JavaScript Modulo Operator” blog post makes use of tw
 
 ### Exercise 5A: Rendering embedded components
 
-First thing's first, we need to get this component rendering!
-
-Inside the `javascript-modulo-operator.mdx` file, you'll notice that some code has been commented out:
-
-```md
-**TODO: Uncomment DivisionGroupsDemo**
-
-{/* <DivisionGroupsDemo /> */}
-```
-
-If you uncomment this code, you'll get an error telling you that next-mdx-remote doesn't know how to resolve the `DivisionGroupsDemo`.
-
-This component exists, and you can find it in `/src/components/DivisionGroupsDemo/DivisionGroupsDemo.js`. Your mission in the first part of this exercise is to resolve this component, fixing the issue and getting it rendering, like so:
-
-![Screen recording showing the embedded `DivisionGroupsDemo` component](/docs/division-groups-demo.png)
-
-**Acceptance Criteria:**
-
-- Within `javascript-modulo-operator.mdx`, the first `<DivisionGroupsDemo>` element should be uncommented, and rendering without issue.
-- Your solution should scale well, even if there are 100s of blog posts. You'll want to use _lazy loading_ to make sure that the `DivisionGroupsDemo` component is only downloaded when it's rendered.
-
-**Resources:**
-
-- [“MDX in Next.js” lesson](https://courses.joshwcomeau.com/joy-of-react/project-blog/01.02-mdx-in-next)
-- [next-mdx-remote docs](https://github.com/hashicorp/next-mdx-remote#custom-components)
-- [“Lazy Loading in Next”](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/10.01-lazy-loading-in-next)
-
+Done.
 
 ### Exercise 5B: Animations with Framer Motion
 
